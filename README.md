@@ -40,12 +40,12 @@ Los modelos de Machine Learning escogidos para clasificar son *K Nearest Neighbo
   cols = X.columns
   cols_cat = ['Tipo_Contrato', 'Metodo_Pago', 'Servicio_Internet']
   
-  one_hot = make_column_transformer((OneHotEncoder(drop='if_binary'), cols_cat),
+  onehot = make_column_transformer((OneHotEncoder(drop='if_binary'), cols_cat),
                                     remainder='passthrough',
                                     sparse_threshold=0,
                                     force_int_remainder_cols=False)
   
-  X = one_hot.fit_transform(X)
+  X = onehot.fit_transform(X)
   ```
   <br/>
 - **Variables numéricas:**<br/>
